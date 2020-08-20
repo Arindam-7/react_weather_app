@@ -1,13 +1,30 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans TC', sans-serif;}
+
+body {
+  position: relative;
+  margin: 0 15px;
+  background-image: url('./assets/night.png');
+  backgroud-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  color: rgb(209, 202, 202);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  height: 100%;
+  position: relative;
 }
+
+
+
