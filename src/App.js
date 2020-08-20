@@ -56,8 +56,8 @@ class App extends Component {
                     ${todayDate.getDate()} 
                     ${months[todayDate.getMonth()]}
                    `;
-      const sunrise = new Date(data1.sys.sunrise * 1000).toLocaleTimeString().slice(0,5);
-      const sunset = new Date(data1.sys.sunset * 1000).toLocaleTimeString().slice(0,5);
+      const sunrise = new Date(data1.sys.sunrise * 1000).toLocaleTimeString().slice(0,4);
+      const sunset = new Date(data1.sys.sunset * 1000).toLocaleTimeString().slice(0,4);
 
       const weatherInfo = {
         city: data1.name,

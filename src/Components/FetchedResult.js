@@ -4,9 +4,28 @@ const FetchedResult = (props) => {
     return(
         <div>
             Fetching Data from the server...
-            <p>
+                <br></br>
+                City: {props.weather.city}
+                <br></br>
+                Country: {props.weather.country}
+                <br></br>
                 Temperature: {props.weather.temperature}
-            </p>
+                <br></br>
+                Date: {props.weather.date}
+                <br></br>
+                Description: {props.weather.description}
+                <br></br>
+                Highest Temperature: {props.weather.high}
+                <br></br>
+                Lowest Temperature: {props.weather.low}
+                <br></br>
+                Wind: {props.weather.wind}
+                <br></br>
+                Sunrise: {props.weather.sunrise}
+                <br></br>
+                Sunset: {props.weather.sunset}
+                <br></br>
+                Humidity: {props.weather.humidity}%
         </div>
     );
 };
