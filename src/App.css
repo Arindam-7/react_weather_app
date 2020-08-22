@@ -2,3 +2,19 @@
   text-align: center;
 }
 
+.heading {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+}
+
+.wrapper {
+  max-width: 1500px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  height: 100px;
+}

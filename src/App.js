@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import Search from './Components/Search';
+import Search from './Components/Search/Search';
 import FetchedResult from './Components/FetchedResult';
 
 class App extends Component {
@@ -96,9 +96,11 @@ class App extends Component {
     const { value, weatherInformation } = this.state;
     return (
       <div>
-        <h1>Weather App</h1>
-        <Search value={value} change={this.cityInput} getWeather={this.getWeatherHandler} />
-        <FetchedResult value={value} weather={weatherInformation} />
+        <h1 className="heading">Weather App</h1>
+        <div className="wrapper">
+          <Search value={value} change={this.cityInput} getWeather={this.getWeatherHandler} />
+          <FetchedResult value={value} weather={weatherInformation} />
+        </div>
       </div>
     );
   }

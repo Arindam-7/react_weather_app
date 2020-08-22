@@ -1,0 +1,41 @@
+.formClass {
+    position: relative;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.inputClass {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 45px;
+    background: linear-gradient(to left top, #000, #22132e) fixed;
+    border-radius: 25px;
+    border: 2px solid rgba(255,255,255,0.2);
+    color: white;
+    transition: all 0.6s;
+}
+
+.inputClass:focus {
+    outline: none;
+    background: linear-gradient(to left top, #000, #33263b) fixed;
+    padding: 12px 25px;
+}
+
+.inputClass:hover {
+    border: 2px solid rgba(255,255,255,0.5);
+}
+
+.icon {
+    color: rgb(231, 219, 219);
+    display: block;
+    position: absolute;
+    top: 39%;
+    left: 18px;
+    height: 14px;
+}
+
+.inputClass:focus ~ .icon {
+    opacity: 0;
+}
+
+
