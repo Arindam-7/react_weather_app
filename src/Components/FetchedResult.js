@@ -71,6 +71,14 @@ const Temp = styled.h3`
     color: #ffffff;
 `;
 
+const WeatherIconStyle = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 70px;
+    color: #ffffff;
+`;
+
 const Desc = styled.h2`
     display: block;
     font-size: 20px;
@@ -136,7 +144,9 @@ const FetchedResult = (props) => {
                         </Date>
                     </LocationAndDateWrapper>
                     <TempWrapper>
-                        {weatherIcon}
+                        <WeatherIconStyle>
+                            {weatherIcon}
+                        </WeatherIconStyle>
                         <Temp>
                             {props.weather.temperature}&#176;C
                         </Temp>
