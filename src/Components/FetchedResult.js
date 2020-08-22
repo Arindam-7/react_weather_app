@@ -20,12 +20,6 @@ to {
 `;
 
 // styled-components
-const Upper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    flex-basis: 100%;
-`;
-
 const Results = styled.div`
     position: relative;
     display: flex;
@@ -35,7 +29,13 @@ const Results = styled.div`
     top: 25px;
     opacity: 0;
     visibility: hidden;
-    animation: ${fadein} 0.5s 1.4s forwards;
+    animation: ${fadein} 0.5s 1s forwards;
+`;
+
+const Upper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
 `;
 
 const LocationAndDateWrapper = styled.div`
@@ -102,6 +102,7 @@ const OtherDetails = styled.div`
     flex-basis: 100%;
     padding: 10px 0;
     margin: 20px 0;
+    letter-spacing: 1px;
     border-radius: 10px;
     align-self: flex-start;
     background-color: rgba(255, 255, 255, 0.2);
@@ -157,7 +158,7 @@ const FetchedResult = (props) => {
                 </Upper>
             <OtherDetails>
                 <Wrapper>
-                    Wind: {props.weather.wind}kph
+                    Wind: {props.weather.wind}mph
                 </Wrapper>  
                 <Wrapper>
                     Sunrise: {props.weather.sunrise} am
