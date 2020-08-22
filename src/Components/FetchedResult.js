@@ -1,4 +1,15 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCloud,
+  faBolt,
+  faCloudRain,
+  faCloudShowersHeavy,
+  faSnowflake,
+  faSun,
+  faSmog,
+} from '@fortawesome/free-solid-svg-icons';
+
 
 const FetchedResult = (props) => {
     return(
