@@ -20,6 +20,12 @@ to {
 `;
 
 // styled-components
+const Upper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+`;
+
 const Results = styled.div`
     position: relative;
     display: flex;
@@ -32,8 +38,8 @@ const Results = styled.div`
     animation: ${fadein} 0.5s 1.4s forwards;
 `;
 
-const LocationAndDate = styled.div`
-    flex-basis: 100%;
+const LocationAndDateWrapper = styled.div`
+    flex-basis: 50%;
 `;
 
 const Location = styled.h2`
@@ -55,6 +61,9 @@ const Date = styled.h2`
     transform: translateY(-15px);
 `;
 
+const TempWrapper = styled.div`
+    flex-basis: 50%;
+`;
 const Temp = styled.h3`
     display: block;
     font-size: 50px;
@@ -73,36 +82,89 @@ const Desc = styled.h2`
     text-transform: capitalize;
 `;
 
+const Wrapper = styled.div`
+    display: flex;
+    flex-basis: calc(100% / 3);
+    padding: 10px;
+`;
+
+const OtherDetails = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    padding: 10px 0;
+    margin: 20px 0;
+    border-radius: 10px;
+    align-self: flex-start;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 40px;
+    color: #f4f1de;
+    font-weight: 600;
+`;
+
+
+
 const FetchedResult = (props) => {
+    // weather icons
+    let weatherIcon = null;
+
+    if (props.weather.main === 'Thunderstorm') {
+        weatherIcon = <FontAwesomeIcon icon={faBolt} />;
+    } else if (props.weather.main === 'Drizzle') {
+        weatherIcon = <FontAwesomeIcon icon={faCloudRain} />;
+    } else if (props.weather.main === 'Rain') {
+        weatherIcon = <FontAwesomeIcon icon={faCloudShowersHeavy} />;
+    } else if (props.weather.main === 'Snow') {
+        weatherIcon = <FontAwesomeIcon icon={faSnowflake} />;
+    } else if (props.weather.main === 'Clear') {
+        weatherIcon = <FontAwesomeIcon icon={faSun} />;
+    } else if (props.weather.main === 'Clouds') {
+        weatherIcon = <FontAwesomeIcon icon={faCloud} />;
+    }
+
     return(
-        <Results>
-            <LocationAndDate>
-                <Location>
-                    {props.weather.city}
-                    <br></br>
-                    {props.weather.country}
-                </Location>
-                <Date>
-                    {props.weather.date}
-                </Date>
-            </LocationAndDate>
-            <div>
-                <Temp>
-                    {props.weather.temperature}&#176;C
-                </Temp>
-                <Desc>
-                    {props.weather.description}
-                </Desc>
-            </div>
-                <div>
+            <Results>
+                <Upper>
+                    <LocationAndDateWrapper>
+                        <Location>
+                            {props.weather.city}
+                            <br></br>
+                            {props.weather.country}
+                        </Location>
+                        <Date>
+                            {props.weather.date}
+                        </Date>
+                    </LocationAndDateWrapper>
+                    <TempWrapper>
+                        {weatherIcon}
+                        <Temp>
+                            {props.weather.temperature}&#176;C
+                        </Temp>
+                        <Desc>
+                            {props.weather.description}
+                        </Desc>
+                    </TempWrapper>
+                </Upper>
+            <OtherDetails>
+                <Wrapper>
                     Wind: {props.weather.wind}kph
-                </div>  
-                <br></br>
-                Sunrise: {props.weather.sunrise}
-                <br></br>
-                Sunset: {props.weather.sunset}
-                <br></br>
-                Humidity: {props.weather.humidity}%
+                </Wrapper>  
+                <Wrapper>
+                    Sunrise: {props.weather.sunrise} am
+                </Wrapper>  
+                <Wrapper>  
+                    Sunset: {props.weather.sunset} pm
+                </Wrapper>  
+                <Wrapper>  
+                    Humidity: {props.weather.humidity}%
+                </Wrapper>  
+                <Wrapper>  
+                    Cloud: {props.weather.clouds}%
+                </Wrapper>  
+                <Wrapper>  
+                    Feels Like: {props.weather.feelslike}&#176;C
+                </Wrapper>  
+            </OtherDetails>
         </Results>
     );
 };
